@@ -168,7 +168,7 @@ struct CropImageView: View {
         
         if inputImage.imageOrientation == .right {
             cropZone = CGRect(x: cropRect.origin.y * imageViewScale,
-                              y: cropRect.origin.x * imageViewScale,
+                              y: inputImage.size.width - (cropRect.size.width * imageViewScale) - (cropRect.origin.x * imageViewScale),
                               width: cropRect.size.height * imageViewScale,
                               height: cropRect.size.width * imageViewScale)
         } else if inputImage.imageOrientation == .down {
